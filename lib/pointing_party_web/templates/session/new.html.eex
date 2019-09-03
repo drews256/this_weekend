@@ -1,9 +1,12 @@
-<h1>Sign In</h1>
-<%= form_for @changeset, Routes.session_path(@conn, :create), fn f -> %>
-  <label>
-    Username: <%= text_input f, :username %>
-  </label>
-  <%=  error_tag f, :username %>
-
-  <%= submit "Sign In" %>
-<% end %>
+<div class="container mt-20 flex flex-col max-w-lg rounded overflow-hidden border">
+  <%= form_for @changeset, Routes.session_path(@conn, :create), fn f -> %>
+    <label class="mt-1 block text-gray-700 text-sm font-bold mb-2" for="username">
+      Name
+    </label>
+    <%= text_input f, :username, class: "mt-1 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    <%=  error_tag f, :username %>
+    <div class="mt-1 mb-1 flex items-center justify-center">
+      <%= submit "Start", class: "mt-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    </div>
+  <% end %>
+</div>

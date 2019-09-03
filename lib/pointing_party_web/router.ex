@@ -20,5 +20,6 @@ defmodule PointingPartyWeb.Router do
   scope "/", PointingPartyWeb do
     pipe_through [:browser, PointingPartyWeb.Plugs.Auth]
     get "/cards", CardController, :index
+    get "/locations", LocationController, :index
   end
 end

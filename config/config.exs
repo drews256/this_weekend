@@ -21,6 +21,12 @@ config :phoenix, :json_library, Jason
 
 import_config "cards.exs"
 
+config :geocoder, :worker_pool_config, size: 4, max_overflow: 2
+
+config :geocoder, :worker,
+  # OpenStreetMaps or OpenCageData are other supported providers
+  provider: Geocoder.Providers.OpenStreetMaps
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

@@ -1,75 +1,45 @@
-<div class="row">
-  <div class="card-container col-10">
-    <%= if !@is_pointing do %>
-      <div class="col-md-4 text-center">
-        <button phx-click="start_party" class="btn btn-primary">Start the Party!</button>
+<div class="container mt-20 flex flex-col max-w-2xl rounded overflow-hidden border">
+ <h1 class=mt-1" ><%= @step.title %></h1>
+  <h2 class="mt-1" ><%= @step.description %></h2>
+  <%= form_for @activity, "#", [phx_submit: "activities_selected", class: "flex flex-col"], fn f -> %>
+    <div class="flex mb-2 mt-2 items-center justify-between">
+    <%= if MapSet.member?(@activities, "mountain-biking") do %>
+      <div phx-click="unselect_activity" phx-value="mountain-biking" class="shadow-outline cursor-pointer w-1/4 justify-center items-center flex-col flex rounded overflow-hidden border">
+        <p style="font-size:100px">&#128693;</p>
+        <p style="font-size:.7%"> Mountain Biking </p>
       </div>
-    <% else %>
-      <div class="card text-left">
-        <div class="card-header">
-          <h2><%= @current_card.title %></h2>
-        </div>
-        <div class="card-body">
-          <p class="card-text"><%= @current_card.description %></p>
-          <form class="form-group text-left points-container" phx-submit="vote">
-            <div class="form-row align-items-center">
-              <div class="col-2">
-                <label for="story-points">Story Points</label>
-                <select name="points" class="form-control story-points" id="story-points">
-                  <%= for point <- @points_range do %>
-                    <option value="<%= point %>"><%= point %></option>
-                  <% end %>
-                </select>
-              </div>
-            </div>
-
-            <%= if @outcome == "winner" do %>
-              <p>Winner: <%= @point_tally %> Points</p>
-              <button
-                class="btn btn-primary"
-                phx-click="next_card"
-                phx-value="<%= @point_tally %>"
-              >
-                Next Card
-              </button>
-            <% end %>
-
-            <%= if @outcome == "tie" do %>
-              <p>TIE!</p>
-
-              <button
-                class="btn btn-primary"
-                phx-click="next_card"
-                phx-value="<%= List.first(@point_tally) %>"
-              >
-                Pick <%= List.first(@point_tally) %>
-              </button>
-
-              <button
-                class="btn btn-primary"
-                phx-click="next_card"
-                phx-value="<%= List.last(@point_tally) %>"
-              >
-                Pick <%= List.last(@point_tally) %>
-              </button>
-            <% end %>
-
-            <%= if @outcome == nil do %>
-              <button class="btn btn-primary">Vote!</button>
-            <% end %>
-          </form>
-        </div>
+    <%= else %>
+      <div phx-click="select_activity" phx-value="mountain-biking" class="truncate hover:shadow-outline cursor-pointer w-1/4 justify-center items-center flex-col flex rounded overflow-hidden border">
+        <p style="font-size:100px">&#128693;</p>
+        <p style="font-size:.7%"> Mountain Biking</p>
       </div>
     <% end %>
-  </div>
-
-  <div class="col-2">
-    <h2>Users</h2>
-    <dl class="row users">
-      <%= for {name, %{metas: [metas]}} <- @users do %>
-        <dt class="col-8"><%= name %></dt>
-        <dd class="col-4"><%= if @outcome, do: metas.points %></dd>
-      <% end %>
-    </dl>
-  </div>
+    <%= if MapSet.member?(@activities, "climbing") do %>
+      <div phx-click="unselect_activity" phx-value="climbing" class="shadow-outline cursor-pointer w-1/4 justify-center items-center flex-col flex rounded overflow-hidden border">
+        <p style="font-size:100px">&#x1F9D7;</p>
+        <p style="font-size:.7%"> Climbing </p>
+      </div>
+    <%= else %>
+      <div phx-click="select_activity" phx-value="climbing" class="hover:shadow-outline cursor-pointer w-1/4 justify-center items-center flex-col flex rounded overflow-hidden border">
+        <p style="font-size:100px">&#x1F9D7;</p>
+        <p style="font-size:.7%"> Climbing </p>
+      </div>
+    <% end %>
+    <%= if MapSet.member?(@activities, "skiing") do %>
+      <div phx-click="unselect_activity" phx-value="skiing" class="shadow-outline cursor-pointer m-w-2 w-1/4 justify-center items-center flex-col flex rounded overflow-hidden border">
+        <p style="font-size:100px">&#x26f7;</p>
+        <p style="font-size:.7%"> Skiing </p>
+      </div>
+    <%= else %>
+      <div phx-click="select_activity" phx-value="skiing" class="hover:shadow-outline cursor-pointer w-1/4 justify-center items-center flex-col flex rounded overflow-hidden border">
+        <p style="font-size:100px">&#x26f7;</p>
+        <p style="font-size:.7%"> Skiing </p>
+      </div>
+    <% end %>
+    </div>
+    <div class= "<%= "mt-1 mb-1 flex items-center justify-center" <> if MapSet.new == @activities, do: " disabled", else: "" %>">
+      <% disabled = if MapSet.new == @activities, do: true, else: false %>
+      <%= submit "Next Step", disabled: disabled, class: "mt-1 bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" <> if MapSet.new == @activities, do: " opacity-50 cursor-not-allowed", else: " hover:bg-blue-700" %>
+    </div>
+  <% end %>
 </div>

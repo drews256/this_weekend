@@ -1,0 +1,51 @@
+<div class="mt-2">
+  <h1><%= @location.geocode.location.city || @location.searched_location %></h1>
+</div>
+
+<div class="mt-2 px-0 overflow-auto flex flex-row max-w-2xl rounded border">
+    <% emoji_map = %{
+"01d" => "\x{2600}",
+"02d" => "\x{26c5}",
+"03d" => "\x{26c5}",
+"04d" => "\x{26c5}",
+"09d" => "\x{1f327}",
+"10d" => "\x{1f327}",
+"11d" => "\x{1f329}",
+"13d" => "\x{2744}",
+"50d" => "\x{1f301}",
+"01n" => "\x{2600}",
+"02n" => "\x{26c5}",
+"03n" => "\x{26c5}",
+"04n" => "\x{26c5}",
+"09n" => "\x{1f327}",
+"10n" => "\x{1f327}",
+"11n" => "\x{1f329}",
+"13n" => "\x{2744}",
+"50n" => "\x{1f301}"
+    } %>
+
+
+ <%= for forecast <- Map.get(@location.weather, "list", %{ "weather" => [] }) do %>
+  <div class="flex-1 m-1 p-1 px-0 flex-col rounded border">
+    <% date = DateTime.from_unix!(Map.get(forecast, "dt")) %>
+    <div class="w-40 flex flex-row">
+      <div style="font-size:.7%"> <%= Timex.month_name(date.month) %> <%= date.day %> </div>
+    </div>
+    <% { time, abbrev } = Timex.Time.to_12hour_clock(date.hour) %>
+    <div class="flex flex-row">
+      <div style="font-size:.7%"> <%=time%>:00 <%= if abbrev == :pm, do: "PM", else: "AM" %> </div>
+    </div>
+      <%= for weather <- Map.get(forecast, "weather", []) do %>
+        <div> <%= Map.get(weather, "main", "") %> </div>
+        <div> <%= String.capitalize(Map.get(weather, "description", "")) %> </div>
+      <div class="flex flex-col items-center">
+        <p style="font-size:100px"> <%= Map.get(emoji_map, Map.get(weather, "icon", ""), " ") %></p>
+      </div>
+      <% end %>
+    <% temp_data = Map.get(forecast, "main", %{}) %>
+    <div class="text-blue-500"> Low: <%= Map.get(temp_data, "temp_min", "") %> </div>
+    <div class="text-red-500"> High: <%= Map.get(temp_data, "temp_max", "") %> </div>
+  </div>
+ <% end %>
+
+</div>
