@@ -1,0 +1,13 @@
+{application,geocoder,
+             [{applications,[kernel,stdlib,elixir,logger,poolboy,poison,
+                             httpoison,geohash,towel]},
+              {description,"A simple, efficient geocoder/reverse geocoder with a built-in cache."},
+              {modules,['Elixir.Geocoder','Elixir.Geocoder.Bounds',
+                        'Elixir.Geocoder.Coords','Elixir.Geocoder.Location',
+                        'Elixir.Geocoder.Providers.GoogleMaps',
+                        'Elixir.Geocoder.Providers.OpenCageData',
+                        'Elixir.Geocoder.Providers.OpenStreetMaps',
+                        'Elixir.Geocoder.Store','Elixir.Geocoder.Worker']},
+              {registered,[]},
+              {vsn,"1.0.0"},
+              {mod,{'Elixir.Geocoder',[]}}]}.

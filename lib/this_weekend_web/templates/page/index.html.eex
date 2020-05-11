@@ -1,0 +1,24 @@
+<section class="phx-hero">
+  <div class='m-2'>
+    <div class="container flex flex-col items-center content-center justify-center max-w-2xl mt-20 overflow-hidden border rounded">
+        <div>
+          <h1 class="mt-2">Where should I go.</h1>
+          <p class="mt-1">A simple app to help you make decisions on what to do based on the weather.</p>
+        </div>
+
+        <div class="flex flex-col items-center content-center justify-center w-full my-1">
+          <div>
+            <p style="font-size:100px" class="self-center">&#129517;</p>
+          </div>
+
+          <div class="mb-2">
+            <%= if signed_in?(@conn) do %>
+              <%= link "New Trip", to: Routes.live_path(@conn, :index), class: "mt-1 bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-blue-700" %>
+            <% else %>
+              <%= link "Get Started", to: Routes.session_path(@conn, :new), class: "mt-1 bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-blue-700" %>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

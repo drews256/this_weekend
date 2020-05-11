@@ -3,7 +3,7 @@ defmodule PointingParty.MixProject do
 
   def project do
     [
-      app: :pointing_party,
+      app: :this_weekend,
       version: "0.1.0",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -33,18 +33,21 @@ defmodule PointingParty.MixProject do
   defp deps do
     [
       {:ecto, "~> 3.1"},
+      {:ecto_sql, "~> 3.0"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:phoenix, "~> 1.4.9"},
       {:phoenix_ecto, "~> 4.0"},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 0.1.0"},
+      {:phoenix_live_view, "~> 0.12.1"},
       {:phoenix_pubsub, "~> 1.1"},
       {:plug_cowboy, "~> 2.0"},
       {:tesla, "~> 1.2.1"},
       {:timex, "~> 3.5"},
-      {:geocoder, "~> 1.0"}
+      {:geocoder, "~> 1.0"},
+      {:httpoison, "~> 1.6"},
+      {:postgrex, ">=0.0.0"}
     ]
   end
 end

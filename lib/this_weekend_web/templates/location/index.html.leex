@@ -1,0 +1,34 @@
+<div class="container flex flex-col max-w-2xl mt-20 overflow-hidden border rounded">
+  <div class="mt-2">
+    <h1 class=mt-1" ><%= @step.title %></h1>
+  </div>
+  <div class="mt-2">
+    <h2 class="mt-1" ><%= @step.description %></h2>
+  </div>
+  <%= form_for :location, "#", [phx_submit: "add_location", class: "flex flex-col"], fn f -> %>
+    <div class="flex flex-col justify-between mt-2 mb-2">
+      <label class="block mt-2 mb-2 text-sm font-bold text-gray-700" for="location">
+        Location
+      </label>
+      <%= text_input f, :location, class: "mt-1 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class= "<%= "mt-2 mb-2 flex items-center justify-center" <> if MapSet.new == @activities, do: " disabled", else: "" %>">
+      <%= submit "Add Location", class: "mt-1 bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+    </div>
+    <%= if @error do %>
+      <div class="alert alert-info" role="alert"><%= @error %></div>
+    <% end %>
+  <% end %>
+</div>
+
+<%= for location <- @locations do %>
+  <div class="mt-2">
+    <h1><%= location |> Map.get(:geocode_data) |> Map.get("location") |> Map.get("city") %>
+  </div>
+  <%= render PointingPartyWeb.ForecastView, "forecast.html", location: location %>
+<% end %>
+
+<div phx-click="where_do_i_go" class= "<%= "mt-2 mb-2 flex items-center justify-center" <> if MapSet.new == @activities, do: " disabled", else: "" %>">
+  <%= submit "Where should I go?", class: "mt-1 bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+</div>

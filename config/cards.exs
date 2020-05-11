@@ -1,6 +1,6 @@
 use Mix.Config
 
-config :pointing_party,
+config :this_weekend,
   cards: [
     %{
       title: "Support loading data from a database",

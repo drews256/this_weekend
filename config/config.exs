@@ -1,10 +1,15 @@
 use Mix.Config
 
-config :pointing_party,
+config :this_weekend, PointingParty.Repo,
+  database: "where_to",
+  username: "postgres",
+  hostname: "localhost"
+
+config :this_weekend,
   ecto_repos: [PointingParty.Repo]
 
 # Configures the endpoint
-config :pointing_party, PointingPartyWeb.Endpoint,
+config :this_weekend, PointingPartyWeb.Endpoint,
   live_view: [signing_salt: "SECRET_SALT"],
   url: [host: "localhost"],
   secret_key_base: "w1I+WClCAIRKxSX5/M7gFHQLa9pnn4AuVDO6XmUgTZxJl+VqMOr2Q5Ou+2CSoLdJ",
@@ -18,6 +23,7 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+config :phoenix, template_engines: [leex: Phoenix.LiveView.Engine]
 
 import_config "cards.exs"
 
