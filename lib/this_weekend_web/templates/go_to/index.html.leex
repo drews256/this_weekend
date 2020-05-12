@@ -2,22 +2,24 @@
 <% reccomended_location = List.first(reccomendation) %>
 <% name = reccomended_location.location |> Map.get(:geocode_data) |> Map.get("location") |> Map.get("city") %>
 
-<div class="container flex flex-col max-w-2xl mt-20 overflow-hidden border rounded">
-  <div class="mt-2">
-    <h1 class=mt-1" ><%= @step.title %></h1>
-  </div>
-  <div class="mt-2">
-    <h2 class="mt-1" ><%= @step.description %></h2>
-  </div>
+<div class="container">
+  <div class="container flex flex-col max-w-2xl mt-20 overflow-hidden border rounded">
+    <div class="mt-2">
+      <h1 class=mt-1" ><%= @step.title %></h1>
+    </div>
+    <div class="mt-2">
+      <h2 class="mt-1" ><%= @step.description %></h2>
+    </div>
 
-  <div class="mt-2">
-    <h1>You should probably head to <%= name %></h1>
-  </div>
+    <div class="mt-2">
+      <h1>You should probably head to <%= name %></h1>
+    </div>
 
-  <div class="mt-2">
-    Our <strong><i>super advanced AI</strong></i> scored <%= name %> with a score of <%= reccomended_location.rating %>
+    <div class="mt-2">
+      Our <strong><i>super advanced AI</strong></i> scored <%= name %> with a score of <%= reccomended_location.rating %>
+    </div>
+    <%= render ThisWeekendWeb.ForecastView, "forecast.html", location: reccomended_location.location %>
   </div>
-  <%= render ThisWeekendWeb.ForecastView, "forecast.html", location: reccomended_location.location %>
 </div>
 
 <div>

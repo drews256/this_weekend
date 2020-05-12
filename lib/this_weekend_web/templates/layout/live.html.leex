@@ -11,45 +11,45 @@
     <script>window.thisWeekend = window.thisWeekend || {}</script>
   </head>
   <body>
-    <main role="main">
-    <nav class="flex flex-wrap items-center justify-between p-6 bg-teal-500">
+    <nav class="sticky top-0 flex flex-wrap items-center justify-between w-full p-6 bg-teal-500">
       <div class="flex items-center flex-shrink-0 mr-6 text-white">
         <span class="text-xl font-semibold tracking-tight">This Weekend</span>
       </div>
-      <div class="flex-grow block w-full lg:flex lg:items-center lg:w-auto">
-        <div class="text-sm lg:flex-grow">
-        <%= if signed_in?(@conn) do %>
-        <% else %>
-            <%= link "Log In", to: Routes.session_path(@conn, :new), class: "block lg:inline-block lg:mt-0 text-teal-200" %>
+      <div>
+
+        <%= if !signed_in?(@conn) do %>
+          <div class="inline-block py-2 text-sm leading-none text-white md:px-4 lg:mt-0">
+              <%= link "Log In", to: Routes.session_path(@conn, :new), class: "block lg:inline-block lg:mt-0 text-teal-200" %>
+          </div>
         <% end %>
-        </div>
-        <div>
-          <div class="inline-block px-4 py-2 text-sm leading-none text-white lg:mt-0">
-          <%= if signed_in?(@conn) do %>
+
+        <%= if signed_in?(@conn) do %>
+          <div class="inline-block py-2 text-sm leading-none text-white md:px-4 lg:mt-0">
             Hi, <%= @conn.assigns.username %>
             <%= link "Log Out", to: Routes.session_path(@conn, :delete), method: :delete, class: "block lg:inline-block lg:mt-0 text-teal-200" %>
-          <% end %>
           </div>
-        </div>
+        <% end %>
       </div>
     </nav>
 
-    <div class="container">
-      <%
-      info = get_flash(@conn, :info)
-      error = get_flash(@conn, :error)
-      %>
-      <%= if info do %>
-        <div class="alert alert-info" role="alert"><%= live_flash(@flash, :notice) %></div>
-      <% end %>
-      <%= if error do %>
-        <div class="alert alert-danger" role="alert"><%= live_flash(@flash, :error) %></div>
-      <% end %>
-    </div>
-    <div class="flex items-center justify-center">
-      <%= @inner_content %>
-    </div>
+    <main role="main">
+      <div class="container">
+        <%
+        info = get_flash(@conn, :info)
+        error = get_flash(@conn, :error)
+        %>
+        <%= if info do %>
+          <div class="alert alert-info" role="alert"><%= live_flash(@flash, :notice) %></div>
+        <% end %>
+        <%= if error do %>
+          <div class="alert alert-danger" role="alert"><%= live_flash(@flash, :error) %></div>
+        <% end %>
+      </div>
+      <div>
+        <%= @inner_content %>
+      </div>
     </main>
+
     <script type="text/javascript">window.thisWeekend.username = "<%= Map.get(@conn.assigns, :username) %>"</script>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
