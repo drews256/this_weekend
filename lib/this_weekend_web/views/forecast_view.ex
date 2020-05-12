@@ -1,3 +1,3 @@
-defmodule PointingPartyWeb.ForecastView do
-  use PointingPartyWeb, :view
+defmodule ThisWeekendWeb.ForecastView do
+  use ThisWeekendWeb, :view
 end

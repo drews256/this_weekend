@@ -1,9 +1,9 @@
-defmodule PointingParty.Account do
+defmodule ThisWeekend.Account do
   use Ecto.Schema
 
   import Ecto.Changeset
 
-  alias PointingParty.Account
+  alias ThisWeekend.Account
 
   schema "accounts" do
     field :username, :string

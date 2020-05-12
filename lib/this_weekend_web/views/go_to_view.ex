@@ -1,3 +1,3 @@
-defmodule PointingPartyWeb.GoToView do
-  use PointingPartyWeb, :view
+defmodule ThisWeekendWeb.GoToView do
+  use ThisWeekendWeb, :view
 end

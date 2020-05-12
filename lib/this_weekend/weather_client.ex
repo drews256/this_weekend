@@ -1,4 +1,4 @@
-defmodule PointingParty.WeatherClient do
+defmodule ThisWeekend.WeatherClient do
   use Tesla
 
   plug(Tesla.Middleware.BaseUrl, "https://api.openweathermap.org/data/2.5")

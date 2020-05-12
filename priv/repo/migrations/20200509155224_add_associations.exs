@@ -1,4 +1,4 @@
-defmodule PointingParty.Repo.Migrations.AddAssociations do
+defmodule ThisWeekend.Repo.Migrations.AddAssociations do
   use Ecto.Migration
 
   def change do

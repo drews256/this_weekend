@@ -5,16 +5,16 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Where To</title>
+    <title>This Weekend</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
-    <script>window.pointingParty = window.pointingParty || {}</script>
+    <script>window.thisWeekend = window.thisWeekend || {}</script>
   </head>
   <body>
     <main role="main">
     <nav class="flex flex-wrap items-center justify-between p-6 bg-teal-500">
       <div class="flex items-center flex-shrink-0 mr-6 text-white">
-        <span class="text-xl font-semibold tracking-tight">Where to?</span>
+        <span class="text-xl font-semibold tracking-tight">This Weekend</span>
       </div>
       <div class="flex-grow block w-full lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
@@ -50,7 +50,7 @@
       <%= @inner_content %>
     </div>
     </main>
-    <script type="text/javascript">window.pointingParty.username = "<%= Map.get(@conn.assigns, :username) %>"</script>
+    <script type="text/javascript">window.thisWeekend.username = "<%= Map.get(@conn.assigns, :username) %>"</script>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

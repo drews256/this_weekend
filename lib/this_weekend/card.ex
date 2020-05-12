@@ -1,4 +1,4 @@
-defmodule PointingParty.Card do
+defmodule ThisWeekend.Card do
   use Ecto.Schema
 
   import Ecto.Changeset

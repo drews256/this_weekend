@@ -1,5 +1,5 @@
-defmodule PointingPartyWeb.Router do
-  use PointingPartyWeb, :router
+defmodule ThisWeekendWeb.Router do
+  use ThisWeekendWeb, :router
   import Phoenix.LiveView.Router
 
   pipeline :browser do
@@ -10,7 +10,7 @@ defmodule PointingPartyWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  scope "/", PointingPartyWeb do
+  scope "/", ThisWeekendWeb do
     pipe_through :browser
     get "/login", SessionController, :new
     post "/login", SessionController, :create
@@ -18,10 +18,10 @@ defmodule PointingPartyWeb.Router do
     get "/", PageController, :index
   end
 
-  scope "/", PointingPartyWeb do
-    pipe_through [:browser, PointingPartyWeb.Plugs.Auth]
-    live "/cards", CardLive, layout: {PointingPartyWeb.LayoutView, :live}
-    live "/locations", LocationLive, layout: {PointingPartyWeb.LayoutView, :live}
-    live "/options", GoToLive, layout: {PointingPartyWeb.LayoutView, :live}
+  scope "/", ThisWeekendWeb do
+    pipe_through [:browser, ThisWeekendWeb.Plugs.Auth]
+    live "/cards", CardLive, layout: {ThisWeekendWeb.LayoutView, :live}
+    live "/locations", LocationLive, layout: {ThisWeekendWeb.LayoutView, :live}
+    live "/options", GoToLive, layout: {ThisWeekendWeb.LayoutView, :live}
   end
 end

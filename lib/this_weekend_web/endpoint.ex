@@ -1,4 +1,4 @@
-defmodule PointingPartyWeb.Endpoint do
+defmodule ThisWeekendWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :this_weekend
 
   @session_options [
@@ -45,5 +45,5 @@ defmodule PointingPartyWeb.Endpoint do
   #
   plug Plug.Session, @session_options
 
-  plug PointingPartyWeb.Router
+  plug ThisWeekendWeb.Router
 end

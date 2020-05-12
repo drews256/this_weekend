@@ -1,4 +1,4 @@
-defmodule PointingPartyWeb.LayoutHelpers do
+defmodule ThisWeekendWeb.LayoutHelpers do
   use Phoenix.HTML
 
   @doc """

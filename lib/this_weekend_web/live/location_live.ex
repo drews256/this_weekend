@@ -3,19 +3,19 @@ Protocol.derive(Jason.Encoder, Geocoder.Coords)
 Protocol.derive(Jason.Encoder, Geocoder.Location)
 Protocol.derive(Jason.Encoder, Geocoder.Bounds)
 
-defmodule PointingPartyWeb.LocationLive do
+defmodule ThisWeekendWeb.LocationLive do
   use Phoenix.LiveView
 
-  alias PointingParty.{Trip, Repo, WeatherClient}
-  alias PointingPartyWeb.{GoToLive, Endpoint, Presence}
-  alias PointingParty.Trip.Builder
+  alias ThisWeekend.{Trip, Repo, WeatherClient}
+  alias ThisWeekendWeb.{GoToLive, Endpoint, Presence}
+  alias ThisWeekend.Trip.Builder
 
-  alias PointingPartyWeb.Router.Helpers, as: Routes
+  alias ThisWeekendWeb.Router.Helpers, as: Routes
 
   @topic "this_weekend"
 
   def render(assigns) do
-    Phoenix.View.render(PointingPartyWeb.LocationView, "index.html", assigns)
+    Phoenix.View.render(ThisWeekendWeb.LocationView, "index.html", assigns)
   end
 
   def mount(params, %{"email" => email}, socket) do

@@ -1,17 +1,15 @@
-defmodule PointingPartyWeb.CardLive do
+defmodule ThisWeekendWeb.CardLive do
   use Phoenix.LiveView
   use Phoenix.HTML
 
-  alias PointingPartyWeb.Router.Helpers, as: Routes
-  alias PointingParty.WeatherClient
-  alias PointingParty.{Card, VoteCalculator}
-  alias PointingParty.Trip.{Builder}
-  alias PointingPartyWeb.{Endpoint, Presence, LocationLive}
+  alias ThisWeekendWeb.Router.Helpers, as: Routes
+  alias ThisWeekend.Trip.{Builder}
+  alias ThisWeekendWeb.{Endpoint, Presence, LocationLive}
 
   @topic "this_weekend"
 
   def render(assigns) do
-    Phoenix.View.render(PointingPartyWeb.CardView, "index.html", assigns)
+    Phoenix.View.render(ThisWeekendWeb.CardView, "index.html", assigns)
   end
 
   def mount(_params, %{"email" => email, "trip_id" => trip_id}, socket) do

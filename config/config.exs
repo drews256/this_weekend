@@ -1,20 +1,20 @@
 use Mix.Config
 
-config :this_weekend, PointingParty.Repo,
+config :this_weekend, ThisWeekend.Repo,
   database: "where_to",
   username: "postgres",
   hostname: "localhost"
 
 config :this_weekend,
-  ecto_repos: [PointingParty.Repo]
+  ecto_repos: [ThisWeekend.Repo]
 
 # Configures the endpoint
-config :this_weekend, PointingPartyWeb.Endpoint,
+config :this_weekend, ThisWeekendWeb.Endpoint,
   live_view: [signing_salt: "SECRET_SALT"],
   url: [host: "localhost"],
   secret_key_base: "w1I+WClCAIRKxSX5/M7gFHQLa9pnn4AuVDO6XmUgTZxJl+VqMOr2Q5Ou+2CSoLdJ",
-  render_errors: [view: PointingPartyWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: PointingParty.PubSub, adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: ThisWeekendWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: ThisWeekend.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

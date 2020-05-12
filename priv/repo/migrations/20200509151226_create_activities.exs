@@ -1,4 +1,4 @@
-defmodule PointingParty.Repo.Migrations.CreateActivities do
+defmodule ThisWeekend.Repo.Migrations.CreateActivities do
   use Ecto.Migration
 
   def change do

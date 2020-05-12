@@ -1,9 +1,9 @@
-defmodule PointingParty.Activity do
+defmodule ThisWeekend.Activity do
   use Ecto.Schema
 
   import Ecto.Changeset
 
-  alias PointingParty.{Activity, Trip}
+  alias ThisWeekend.{Activity, Trip}
 
   schema "activities" do
     field :name, :string

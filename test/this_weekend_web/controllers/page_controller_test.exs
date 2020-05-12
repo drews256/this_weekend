@@ -1,5 +1,5 @@
-defmodule PointingPartyWeb.PageControllerTest do
-  use PointingPartyWeb.ConnCase
+defmodule ThisWeekendWeb.PageControllerTest do
+  use ThisWeekendWeb.ConnCase
 
   describe "authenticated user" do
     setup  %{conn: conn} do

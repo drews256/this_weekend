@@ -1,4 +1,4 @@
-defmodule PointingPartyWeb.Plugs.Auth do
+defmodule ThisWeekendWeb.Plugs.Auth do
   import Phoenix.Controller
   import Plug.Conn
 
@@ -11,12 +11,12 @@ defmodule PointingPartyWeb.Plugs.Auth do
         |> redirect(to: "/login")
         |> halt()
 
-      username ->
-        assign(conn, :username, username)
+      email ->
+        assign(conn, :email, email)
     end
   end
 
   defp authenticate(conn) do
-     get_session(conn, :username)
+    get_session(conn, :email)
   end
 end

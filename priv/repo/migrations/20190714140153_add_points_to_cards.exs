@@ -1,4 +1,4 @@
-defmodule PointingParty.Repo.Migrations.AddPointsToCards do
+defmodule ThisWeekend.Repo.Migrations.AddPointsToCards do
   use Ecto.Migration
 
   def change do

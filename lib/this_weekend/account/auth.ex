@@ -1,11 +1,9 @@
-defmodule PointingParty.Account.Auth do
-  alias PointingParty.{User, Repo}
-  alias PointingParty.Trip.{Builder}
+defmodule ThisWeekend.Account.Auth do
+  alias ThisWeekend.{User, Repo}
+  alias ThisWeekend.Trip.{Builder}
 
   def login(params) do
     user = User.find_by_email(params["username"])
-
-    IO.inspect(user)
 
     case user do
       %User{email: email} ->

@@ -1,4 +1,4 @@
-defmodule PointingPartyWeb.ChannelCase do
+defmodule ThisWeekendWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,7 +21,7 @@ defmodule PointingPartyWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint PointingPartyWeb.Endpoint
+      @endpoint ThisWeekendWeb.Endpoint
     end
   end
 end

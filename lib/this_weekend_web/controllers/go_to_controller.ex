@@ -1,5 +1,5 @@
-defmodule PointingPartyWeb.GoToController do
-  use PointingPartyWeb, :controller
+defmodule ThisWeekendWeb.GoToController do
+  use ThisWeekendWeb, :controller
 
   import Phoenix.LiveView.Controller
 
@@ -9,7 +9,7 @@ defmodule PointingPartyWeb.GoToController do
     activities = params["activities"]
     locations = params["locations"]
 
-    live_render(conn, PointingPartyWeb.GoToLive, session: %{
+    live_render(conn, ThisWeekendWeb.GoToLive, session: %{
       username: username, activities: activities, locations: locations
     })
   end

@@ -1,4 +1,4 @@
-defmodule PointingParty.VoteCalculator do
+defmodule ThisWeekend.VoteCalculator do
   def calculate_votes(users) do
     case winning_vote(users) do
       top_two when is_list(top_two) -> {"tie", top_two}

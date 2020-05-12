@@ -1,4 +1,4 @@
-defmodule PointingParty.MixProject do
+defmodule ThisWeekend.MixProject do
   use Mix.Project
 
   def project do
@@ -18,7 +18,7 @@ defmodule PointingParty.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {PointingParty.Application, []},
+      mod: {ThisWeekend.Application, []},
       extra_applications: [:logger, :runtime_tools, :timex],
     ]
   end

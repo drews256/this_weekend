@@ -1,4 +1,4 @@
-defmodule PointingParty.VoteCalculatorTest do
+defmodule ThisWeekend.VoteCalculatorTest do
   use ExUnit.Case, async: true
 
    @users_with_winner %{
@@ -14,10 +14,10 @@ defmodule PointingParty.VoteCalculatorTest do
   }
 
   test "calculate_votes/1 calculates when there is a winner" do
-    {"winner", 3} = PointingParty.VoteCalculator.calculate_votes(@users_with_winner)
+    {"winner", 3} = ThisWeekend.VoteCalculator.calculate_votes(@users_with_winner)
   end
 
   test "calculate_votes/1 calculates when there is a tie" do
-    {"tie", [1,2]} = PointingParty.VoteCalculator.calculate_votes(@users_with_tie)
+    {"tie", [1,2]} = ThisWeekend.VoteCalculator.calculate_votes(@users_with_tie)
   end
 end

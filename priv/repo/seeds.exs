@@ -5,13 +5,13 @@
 # Inside the script, you can read and write to any of your
 # repositories directly:
 #
-#     PointingParty.Repo.insert!(%PointingParty.SomeSchema{})
+#     ThisWeekend.Repo.insert!(%ThisWeekend.SomeSchema{})
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
 
-alias PointingParty.{Card, Repo}
+alias ThisWeekend.{Card, Repo}
 
 cards = [
   %{title: "First card", description: "This is a description of the first card."},

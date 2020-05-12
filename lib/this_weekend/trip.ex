@@ -1,11 +1,11 @@
 import Ecto.Query
 
-defmodule PointingParty.Trip do
+defmodule ThisWeekend.Trip do
   use Ecto.Schema
 
   import Ecto.Changeset
 
-  alias PointingParty.{Repo, User, Trip, Location, Forecast, Activity}
+  alias ThisWeekend.{Repo, User, Trip, Location, Forecast, Activity}
 
   schema "trips" do
     belongs_to(:user, User)

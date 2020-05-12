@@ -1,3 +1,3 @@
-defmodule PointingPartyWeb.LayoutView do
-  use PointingPartyWeb, :view
+defmodule ThisWeekendWeb.LayoutView do
+  use ThisWeekendWeb, :view
 end

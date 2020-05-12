@@ -1,5 +1,5 @@
-defmodule PointingParty.Trip.Builder do
-  alias PointingParty.{Forecast, Location, Trip, Repo, Activity}
+defmodule ThisWeekend.Trip.Builder do
+  alias ThisWeekend.{Forecast, Location, Trip, Repo, Activity}
 
   def create_trip(%{id: user_id}) do
     Trip.create(%{user_id: user_id})

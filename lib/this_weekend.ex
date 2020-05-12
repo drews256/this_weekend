@@ -1,6 +1,6 @@
-defmodule PointingParty do
+defmodule ThisWeekend do
   @moduledoc """
-  PointingParty keeps the contexts that define your domain
+  ThisWeekend keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

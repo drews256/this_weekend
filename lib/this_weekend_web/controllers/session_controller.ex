@@ -1,7 +1,7 @@
-defmodule PointingPartyWeb.SessionController do
-  use PointingPartyWeb, :controller
+defmodule ThisWeekendWeb.SessionController do
+  use ThisWeekendWeb, :controller
 
-  alias PointingParty.{Account, Account.Auth}
+  alias ThisWeekend.{Account, Account.Auth}
 
   def new(conn, _params) do
     changeset = Account.changeset(%Account{})

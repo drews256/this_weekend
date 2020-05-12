@@ -1,3 +1,3 @@
-defmodule PointingPartyWeb.CardView do
-  use PointingPartyWeb, :view
+defmodule ThisWeekendWeb.CardView do
+  use ThisWeekendWeb, :view
 end

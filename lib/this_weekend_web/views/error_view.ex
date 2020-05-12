@@ -1,5 +1,5 @@
-defmodule PointingPartyWeb.ErrorView do
-  use PointingPartyWeb, :view
+defmodule ThisWeekendWeb.ErrorView do
+  use ThisWeekendWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

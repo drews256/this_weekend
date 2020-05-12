@@ -1,4 +1,4 @@
-defmodule PointingParty.Repo.Migrations.CreateUsers do
+defmodule ThisWeekend.Repo.Migrations.CreateUsers do
   use Ecto.Migration
 
   def change do

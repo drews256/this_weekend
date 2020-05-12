@@ -26,7 +26,7 @@
   <div class="mt-2">
     <h1><%= location |> Map.get(:geocode_data) |> Map.get("location") |> Map.get("city") %>
   </div>
-  <%= render PointingPartyWeb.ForecastView, "forecast.html", location: location %>
+  <%= render ThisWeekendWeb.ForecastView, "forecast.html", location: location %>
 <% end %>
 
 <div phx-click="where_do_i_go" class= "<%= "mt-2 mb-2 flex items-center justify-center" <> if MapSet.new == @activities, do: " disabled", else: "" %>">

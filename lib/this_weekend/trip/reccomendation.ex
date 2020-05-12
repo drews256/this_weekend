@@ -1,7 +1,7 @@
 import Ecto.Query
 
-defmodule PointingParty.Trip.Reccomendation do
-  alias PointingParty.{Forecast, Location, Trip, Repo, Activity}
+defmodule ThisWeekend.Trip.Reccomendation do
+  alias ThisWeekend.{Forecast, Location, Trip, Repo, Activity}
 
   def rating_by_weather_type(weather_id) do
     # 200's thunderstorms

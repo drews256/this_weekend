@@ -1,4 +1,4 @@
-defmodule PointingParty.Repo.Migrations.CreateTrips do
+defmodule ThisWeekend.Repo.Migrations.CreateTrips do
   use Ecto.Migration
 
   def change do

@@ -2,7 +2,7 @@
   <div class='m-2'>
     <div class="container flex flex-col items-center content-center justify-center max-w-2xl mt-20 overflow-hidden border rounded">
         <div>
-          <h1 class="mt-2">Where should I go.</h1>
+          <h1 class="mt-2">What are you doing <b>this weekend</b></h1>
           <p class="mt-1">A simple app to help you make decisions on what to do based on the weather.</p>
         </div>
 

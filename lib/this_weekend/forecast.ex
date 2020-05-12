@@ -1,9 +1,9 @@
-defmodule PointingParty.Forecast do
+defmodule ThisWeekend.Forecast do
   use Ecto.Schema
 
   import Ecto.Changeset
 
-  alias PointingParty.{Forecast, Location, Trip}
+  alias ThisWeekend.{Forecast, Location, Trip}
 
   schema "forecasts" do
     belongs_to(:location, Location)

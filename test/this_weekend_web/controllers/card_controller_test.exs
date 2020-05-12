@@ -1,5 +1,5 @@
-defmodule PointingPartyWeb.CardControllerTest do
-  use PointingPartyWeb.ConnCase
+defmodule ThisWeekendWeb.CardControllerTest do
+  use ThisWeekendWeb.ConnCase
 
   @username "test_user"
 
