@@ -19,7 +19,7 @@ defmodule ThisWeekendWeb.CardLive do
     assigns = [
       step: %{
         title: "Step 1",
-        description: "Tell us your name and what kind of activity you want to do"
+        description: "What kind of activity you want to do"
       },
       activities: MapSet.new(),
       activity_names: MapSet.new(),

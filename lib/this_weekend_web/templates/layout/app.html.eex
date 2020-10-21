@@ -11,7 +11,7 @@
   </head>
   <body class="min-w-full">
     <nav class="sticky top-0 flex flex-wrap items-center justify-between w-full bg-teal-500">
-      <div class="flex items-center flex-shrink-0 mr-6 text-white">
+      <div class="flex items-center flex-shrink-0 h-16 pl-6 mr-6 text-white">
         <span class="text-xl font-semibold tracking-tight"><%= link "This Weekend", to: Routes.page_path(@conn, :index) %></span>
       </div>
       <div>

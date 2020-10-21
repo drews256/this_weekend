@@ -11,9 +11,11 @@
     <script>window.thisWeekend = window.thisWeekend || {}</script>
   </head>
   <body>
-    <nav class="sticky top-0 flex flex-wrap items-center justify-between w-full p-6 bg-teal-500">
-      <div class="flex items-center flex-shrink-0 mr-6 text-white">
-        <span class="text-xl font-semibold tracking-tight">This Weekend</span>
+    <nav class="sticky top-0 flex flex-wrap items-center justify-between w-full bg-teal-500">
+      <div class="flex items-center flex-shrink-0 h-16 mr-6 text-white">
+        <span class="pl-6 text-xl font-semibold tracking-tight">
+          <%= link "This Weekend", to: Routes.page_path(@conn, :index) %>
+        </span>
       </div>
       <div>
 
